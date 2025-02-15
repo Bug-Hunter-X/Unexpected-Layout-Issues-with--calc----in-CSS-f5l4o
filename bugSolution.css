@@ -1,0 +1,13 @@
+To fix the issue, ensure the parent container has an explicitly defined width. This allows `calc()` to function predictably.  If a percentage-based width is needed, ensure the parent container has a defined width. For example, setting the parent container's width to `100vw` or a fixed pixel value can resolve the issue.  Ensure that the units within the `calc()` function are compatible and that there are no syntax errors. Here's the corrected CSS:
+
+```css
+.container {
+  width: 100%; /* or a fixed width, e.g., 800px */
+display: flex;
+}
+
+.item {
+  width: calc(100% - 20px);
+  /* Now this will work as expected */
+}
+```
